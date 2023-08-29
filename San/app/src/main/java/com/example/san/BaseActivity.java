@@ -101,30 +101,37 @@ public class BaseActivity extends TopBaseActivity  {
                 turnOnLights();
             }
         });
-
         buttonf.setOnClickListener(new View.OnClickListener() {
             @Override
-            @OnClick(R.id.buttonf)
+            @OnClick(R.id.button)
             public void onClick(View view) {
-                DistanceWheelMotion distanceWheelMotion = new DistanceWheelMotion(
-                        DistanceWheelMotion.ACTION_FORWARD_RUN,  5,100
-                );
-                wheelMotionManager.doDistanceMotion(distanceWheelMotion);
-                wheelMotionManager.setWheelMotionListener(new WheelMotionManager.WheelMotionListener() {
-                    @Override
-                    public void onWheelStatus(String s) {
-                        Log.i("Cris", "onWheelStatus: s="+s);
-                    }
-                });
-
-
+                moveForward();
             }
         });
+
 
     }
 
     @Override
     protected void onMainServiceConnected() {
+
+    }
+    private void moveForward(){
+        // Create a DistanceWheelMotion instance
+        DistanceWheelMotion distanceWheelMotion = new DistanceWheelMotion(
+                DistanceWheelMotion.ACTION_FORWARD_RUN, 5, 100
+        );
+
+        // Set up the Wheel Motion Listener before executing the motion
+        wheelMotionManager.setWheelMotionListener(new WheelMotionManager.WheelMotionListener() {
+            @Override
+            public void onWheelStatus(String s) {
+                Log.i("Cris", "onWheelStatus: s=" + s);
+            }
+        });
+
+        // Execute the distance motion
+        wheelMotionManager.doDistanceMotion(distanceWheelMotion);
 
     }
 

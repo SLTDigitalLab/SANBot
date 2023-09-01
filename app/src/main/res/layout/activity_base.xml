@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BaseActivity"
-    android:background="@drawable/img_2">>
+    android:background="@drawable/img_2">
 
 
     <Button

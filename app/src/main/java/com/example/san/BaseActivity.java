@@ -8,6 +8,7 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,13 +38,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseActivity extends TopBaseActivity  {
-    private final static String TAG = "IGOR-BAS";
-    public static boolean busy = false;
+    private final static String TAG = "DIL-BAS";
+
     @BindView(R.id.button)
     Button button;
     @BindView(R.id.buttonf)
     Button buttonf;
     //robot managers
+
     private HDCameraManager hdCameraManager; //video, faceRec
     private HeadMotionManager headMotionManager;    //head movements
     private WingMotionManager wingMotionManager;    //hands movements
@@ -103,11 +105,16 @@ public class BaseActivity extends TopBaseActivity  {
         });
         buttonf.setOnClickListener(new View.OnClickListener() {
             @Override
-            @OnClick(R.id.button)
+            @OnClick(R.id.buttonf)
             public void onClick(View view) {
                 moveForward();
+
+
             }
         });
+
+
+
 
 
     }
@@ -116,6 +123,7 @@ public class BaseActivity extends TopBaseActivity  {
     protected void onMainServiceConnected() {
 
     }
+
     private void moveForward(){
         // Create a DistanceWheelMotion instance
         DistanceWheelMotion distanceWheelMotion = new DistanceWheelMotion(
@@ -140,13 +148,17 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             public void onPIRCheckResult(boolean isCheck, int part) {
 
+
                 //if it's the back PIR
                 Log.i(TAG, "PIR back triggered -> rotating");
 
                 //flicker led
                 hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_FLICKER_PINK));
+
                 //rotate at angle
                 rotateAtRelativeAngle(wheelMotionManager, 180);
+
+
 
 
             }

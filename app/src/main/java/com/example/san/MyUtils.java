@@ -16,7 +16,7 @@ public final class MyUtils {
 
 
     /**
-     * Igor: makes the thread sleep fot the seconds passed,
+     * makes the thread sleep fot the seconds passed,
      * useful to avoid speech over speech.
      * @param seconds seconds to block the thread
      */
@@ -46,7 +46,7 @@ public final class MyUtils {
     }
 
     /**
-     * Igor: compensates the error of the Sanbot compass, trial and error to find the magic values
+     *  compensates the error of the Sanbot compass, trial and error to find the magic values
      * @param passed the angle of the gyro
      * @return the angle corrected of the gyro
      */
@@ -93,13 +93,13 @@ public final class MyUtils {
             RelativeAngleWheelMotion relativeAngleWheelMotion = new RelativeAngleWheelMotion(
                     RelativeAngleWheelMotion.TURN_RIGHT, 5, angle);
             wheelMotionManager.doRelativeAngleMotion(relativeAngleWheelMotion);
-            Log.i("IGOR-rotation","turning right " + angle);
+            Log.i("rotation","turning right " + angle);
             return 1;
         } else {
             RelativeAngleWheelMotion relativeAngleWheelMotion = new RelativeAngleWheelMotion(
                     RelativeAngleWheelMotion.TURN_LEFT, 5, (360-angle));
             wheelMotionManager.doRelativeAngleMotion(relativeAngleWheelMotion);
-            Log.i("IGOR-rotation","turning left " + (360-angle));
+            Log.i("rotation","turning left " + (360-angle));
             return -1;
         }
     }
@@ -124,7 +124,7 @@ public final class MyUtils {
 
 
     /**
-     * Igor: sets an emotion that expires after x seconds, then becomes normal
+     * sets an emotion that expires after x seconds, then becomes normal
      * @param emotionPassed the emotion for the eyes
      */
     public static void temporaryEmotion(final SystemManager systemManager, EmotionsType emotionPassed, int seconds_passed) {

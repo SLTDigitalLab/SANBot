@@ -25,7 +25,7 @@
             android:name=".videoActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".ChoiceActivity"
             android:exported="false" />
         <activity
             android:name=".BaseActivity"

@@ -4,17 +4,13 @@ package com.example.san;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import static com.example.san.MyUtils.rotateAtRelativeAngle;
-import com.sanbot.opensdk.function.unit.interfaces.hardware.PIRListener;
 import com.sanbot.opensdk.base.TopBaseActivity;
 import com.sanbot.opensdk.beans.FuncConstant;
-import com.sanbot.opensdk.function.beans.LED;
 import com.sanbot.opensdk.function.beans.headmotion.LocateAbsoluteAngleHeadMotion;
 import com.sanbot.opensdk.function.beans.headmotion.RelativeAngleHeadMotion;
 import com.sanbot.opensdk.function.unit.HDCameraManager;
@@ -25,14 +21,11 @@ import com.sanbot.opensdk.function.unit.SystemManager;
 import com.sanbot.opensdk.function.unit.WheelMotionManager;
 import com.sanbot.opensdk.function.unit.WingMotionManager;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity2 extends TopBaseActivity {
+public class ChoiceActivity extends TopBaseActivity {
     private final static String TAG = "DIL-BAS";
     @BindView(R.id.button2)
     Button button2;
@@ -52,12 +45,10 @@ public class MainActivity2 extends TopBaseActivity {
     );
     RelativeAngleHeadMotion relativeHeadMotionDOWN = new RelativeAngleHeadMotion(RelativeAngleHeadMotion.ACTION_DOWN, 30);
 
-    private List<Integer> handleList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-            register(MainActivity2.class);
+            register(ChoiceActivity.class);
             //screen always on
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -72,7 +63,7 @@ public class MainActivity2 extends TopBaseActivity {
             //float button of the system
             systemManager.switchFloatBar(true, getClass().getName());
 
-        initHardwareListeners();
+
         //LOAD handshakes stats
         MySettings.initializeXML();
         MySettings.loadHandshakes();
@@ -83,7 +74,16 @@ public class MainActivity2 extends TopBaseActivity {
                 @Override
                 @OnClick(R.id.button2)
                 public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity2.this, BaseActivity.class);
+                    Intent intent = new Intent(ChoiceActivity.this, BaseActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+            button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                @OnClick(R.id.button3)
+                public void onClick(View view) {
+                    Intent intent = new Intent(ChoiceActivity.this, inquiries.class);
                     startActivity(intent);
                     finish();
                 }
@@ -96,31 +96,6 @@ public class MainActivity2 extends TopBaseActivity {
     protected void onMainServiceConnected() {
 
     }
-    /**
-     * initialize listeners
-     */
-    private void initHardwareListeners() {
 
 
-        hardWareManager.setOnHareWareListener(new PIRListener() {
-            @Override
-            public void onPIRCheckResult(boolean isCheck, int part) {
-                if (part != 1) {
-                    Toast.makeText(getApplicationContext(),"you are behind me", Toast.LENGTH_SHORT).show();
-                    //if it's the back PIR
-                    Log.i(TAG, "PIR back triggered -> rotating");
-                    if (!busy && MySettings.isSoundRotationAllowed()) {
-                        //flicker led
-                        hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_FLICKER_RED));
-                        //rotate at angle
-                        rotateAtRelativeAngle(wheelMotionManager, 180);
-
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(),"you are in front of me", Toast.LENGTH_SHORT).show();
-                    Log.i(TAG, "PIR frontal triggered");
-                }
-            }
-        });
-    }
 }

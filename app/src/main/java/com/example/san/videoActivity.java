@@ -5,7 +5,6 @@ package com.example.san;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -32,7 +31,7 @@ public class videoActivity extends AppCompatActivity {
         mediaController.setAnchorView(videoView);
         videoView.requestFocus();
         videoView.start();
-        Intent intent = new Intent(videoActivity.this, MainActivity2.class);
+        Intent intent = new Intent(videoActivity.this, ChoiceActivity.class);
         startActivity(intent);
         finish();
     }

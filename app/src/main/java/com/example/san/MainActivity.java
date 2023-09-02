@@ -68,7 +68,7 @@ public class  MainActivity extends TopBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-            register(MainActivity2.class);
+            register(ChoiceActivity.class);
             //screen always on
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

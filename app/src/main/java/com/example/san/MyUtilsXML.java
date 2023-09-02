@@ -34,7 +34,7 @@ import javax.xml.transform.stream.StreamResult;
  */
 public final class MyUtilsXML {
 
-    private final static String TAG = "IGOR-XML";
+    private final static String TAG = "DIL-XML";
 
     /**
      *  Takes the string-value from an sub-element (tag) that's inside the element passed
@@ -80,7 +80,7 @@ public final class MyUtilsXML {
         if (!fileDir.exists()) {
             //if no directory it is created
             final boolean mkdirs = fileDir.mkdirs();
-            if (!mkdirs) Log.e("IGOR", "Error in mkdirs creating directory file");
+            if (!mkdirs) Log.e("DIL", "Error in mkdirs creating directory file");
         }
         //create file in directory
         File fileXML = new File(fileDir, fileName);
@@ -388,7 +388,7 @@ public final class MyUtilsXML {
             return hsList.getLength();
 
         } catch (Exception e) {
-            Log.i("IGORXML", "READING XML WRONG: "+ e.toString());
+            Log.i("DIL-XML", "READING XML WRONG: "+ e.toString());
             e.printStackTrace();}
         return -2;
     }

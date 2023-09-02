@@ -18,6 +18,7 @@ import static com.example.san.MyUtils.rotateAtRelativeAngle;
 import com.sanbot.opensdk.base.TopBaseActivity;
 import com.sanbot.opensdk.beans.FuncConstant;
 import com.sanbot.opensdk.beans.OperationResult;
+import com.sanbot.opensdk.function.beans.EmotionsType;
 import com.sanbot.opensdk.function.beans.LED;
 import com.sanbot.opensdk.function.beans.StreamOption;
 import com.sanbot.opensdk.function.beans.headmotion.LocateAbsoluteAngleHeadMotion;
@@ -137,6 +138,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonarro)
             public void onClick(View view) {
+                systemManager.showEmotion(EmotionsType.ARROGANCE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_GREEN));
 
             }
         });
@@ -144,6 +147,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonsurp)
             public void onClick(View view) {
+                systemManager.showEmotion(EmotionsType.SURPRISE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
 
             }
         });
@@ -151,7 +156,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonwhis)
             public void onClick(View view) {
-                // Implement the click action for the buttonwhis here
+                systemManager.showEmotion(EmotionsType.WHISTLE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_BLUE));
             }
         });
 
@@ -159,7 +165,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonlau)
             public void onClick(View view) {
-                // Implement the click action for the buttonlau here
+                systemManager.showEmotion(EmotionsType.LAUGHTER);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_PINK));
             }
         });
 
@@ -167,7 +174,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttongb)
             public void onClick(View view) {
-                // Implement the click action for the buttongb here
+                systemManager.showEmotion(EmotionsType.GOODBYE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
             }
         });
 
@@ -175,7 +183,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonshy)
             public void onClick(View view) {
-                // Implement the click action for the buttonshy here
+                systemManager.showEmotion(EmotionsType.SHY);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_RED));
             }
         });
 
@@ -183,7 +192,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonsweat)
             public void onClick(View view) {
-                // Implement the click action for the buttonsweat here
+                systemManager.showEmotion(EmotionsType.SWEAT);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
             }
         });
 
@@ -191,7 +201,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonsnicker)
             public void onClick(View view) {
-                // Implement the click action for the buttonsnicker here
+                systemManager.showEmotion(EmotionsType.SNICKER);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_PURPLE));
             }
         });
 
@@ -199,7 +210,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonpick)
             public void onClick(View view) {
-                // Implement the click action for the buttonpick here
+                systemManager.showEmotion(EmotionsType.PICKNOSE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_GREEN));
             }
         });
 
@@ -207,7 +219,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttoncry)
             public void onClick(View view) {
-                // Implement the click action for the buttoncry here
+                systemManager.showEmotion(EmotionsType.CRY);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
             }
         });
 
@@ -215,7 +228,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonab)
             public void onClick(View view) {
-                // Implement the click action for the buttonab here
+                systemManager.showEmotion(EmotionsType.ABUSE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_GREEN));
             }
         });
 
@@ -223,7 +237,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonang)
             public void onClick(View view) {
-                // Implement the click action for the buttonang here
+                systemManager.showEmotion(EmotionsType.ANGRY);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_RED));
             }
         });
 
@@ -231,7 +246,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonki)
             public void onClick(View view) {
-                // Implement the click action for the buttonki here
+                systemManager.showEmotion(EmotionsType.KISS);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_RED));
             }
         });
 
@@ -239,7 +255,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonsleep)
             public void onClick(View view) {
-                // Implement the click action for the buttonsleep here
+                systemManager.showEmotion(EmotionsType.SLEEP);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
             }
         });
 
@@ -247,7 +264,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonsmile)
             public void onClick(View view) {
-                // Implement the click action for the buttonsmile here
+                systemManager.showEmotion(EmotionsType.SMILE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_PURPLE));
             }
         });
 
@@ -255,7 +273,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttongri)
             public void onClick(View view) {
-                // Implement the click action for the buttongri here
+                systemManager.showEmotion(EmotionsType.GRIEVANCE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_WHITE));
             }
         });
 
@@ -263,7 +282,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonques)
             public void onClick(View view) {
-                // Implement the click action for the buttonques here
+                systemManager.showEmotion(EmotionsType.QUESTION);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_YELLOW));
             }
         });
 
@@ -271,7 +291,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonfaint)
             public void onClick(View view) {
-                // Implement the click action for the buttonfaint here
+                systemManager.showEmotion(EmotionsType.FAINT);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_YELLOW));
             }
         });
 
@@ -279,7 +300,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonprise)
             public void onClick(View view) {
-                // Implement the click action for the buttonprise here
+                systemManager.showEmotion(EmotionsType.PRISE);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_PURPLE));
             }
         });
 
@@ -287,7 +309,8 @@ public class BaseActivity extends TopBaseActivity  {
             @Override
             @OnClick(R.id.buttonnormal)
             public void onClick(View view) {
-                // Implement the click action for the buttonnormal here
+                systemManager.showEmotion(EmotionsType.NORMAL);
+                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_PINK));
             }
         });
 
@@ -303,47 +326,8 @@ public class BaseActivity extends TopBaseActivity  {
 
     }
 
-    private void moveForward(){
-        // Create a DistanceWheelMotion instance
-        DistanceWheelMotion distanceWheelMotion = new DistanceWheelMotion(
-                DistanceWheelMotion.ACTION_FORWARD_RUN, 5, 100
-        );
-
-        // Set up the Wheel Motion Listener before executing the motion
-        wheelMotionManager.setWheelMotionListener(new WheelMotionManager.WheelMotionListener() {
-            @Override
-            public void onWheelStatus(String s) {
-                Log.i("Cris", "onWheelStatus: s=" + s);
-            }
-        });
-
-        // Execute the distance motion
-        wheelMotionManager.doDistanceMotion(distanceWheelMotion);
-
-    }
-
-    private void turnOnLights() {
-        hardWareManager.setOnHareWareListener(new PIRListener() {
-            @Override
-            public void onPIRCheckResult(boolean isCheck, int part) {
 
 
-                //if it's the back PIR
-                Log.i(TAG, "PIR back triggered -> rotating");
-
-                //flicker led
-                hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_FLICKER_PINK));
-
-                //rotate at angle
-                rotateAtRelativeAngle(wheelMotionManager, 180);
-
-
-
-
-            }
-        });
-
-    }
 
 
 

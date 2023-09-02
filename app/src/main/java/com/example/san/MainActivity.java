@@ -169,20 +169,57 @@ public class  MainActivity extends TopBaseActivity {
             @Override
             public void onPIRCheckResult(boolean isCheck, int part) {
 
-                if (part != 1) {
+                if (part != 1 && isCheck==true) {
+                    wanderOffNow();
                     Toast.makeText(getApplicationContext(), "you are behind me", Toast.LENGTH_SHORT).show();
                     //if it's the back PIR
                     Log.i(TAG, "PIR back triggered -> rotating");
-                    if (!busy && MySettings.isSoundRotationAllowed()) {
+                    MySettings.setSoundRotationAllowed(true);
+
                         //flicker led
                         hardWareManager.setLED(new LED(LED.PART_ALL, LED.MODE_FLICKER_RED));
                         //rotate at angle
                         rotateAtRelativeAngle(wheelMotionManager, 180);
 
 
-                    }
-                } else if(isCheck==true ){
-                    busy=false;
+
+
+                        //starts greeting with this person passing
+                        busy = true;
+                        Toast.makeText(MainActivity.this, "Smiling", Toast.LENGTH_SHORT).show();
+                        systemManager.showEmotion(EmotionsType. SMILE);
+                        //say hi
+
+                        speechManager.startSpeak(getString(R.string.Welcome_to_Techno_2023_We_are_glad_that_you_are_here), MySettings.getSpeakDefaultOption());
+                        concludeSpeak(speechManager);
+
+
+                        // 50% say Good morning/afternoon/ecc...
+                        double random_num = Math.random();
+                        Log.i(TAG, "Random = " + random_num);
+                        if (random_num < 0.5) {
+                            int hours = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+                            if (hours < 6) {
+                                speechManager.startSpeak(getString(R.string.Top_of_the_morning_to_you), MySettings.getSpeakDefaultOption());
+                            } else if (hours < 12) {
+                                speechManager.startSpeak(getString(R.string.Good_Morning), MySettings.getSpeakDefaultOption());
+                            } else if (hours < 16) {
+                                speechManager.startSpeak(getString(R.string.Good_Afternoon), MySettings.getSpeakDefaultOption());
+                            } else if (hours < 19) {
+                                speechManager.startSpeak(getString(R.string.Good_Evening), MySettings.getSpeakDefaultOption());
+                            }
+                            concludeSpeak(speechManager);
+
+                        }
+                        Intent intent = new Intent(MainActivity.this, videoActivity.class);
+                        startActivity(intent);
+                        finish();
+
+
+
+
+
+                } else if(part ==1 && isCheck==true ){
 
                     wanderOffNow();
 
@@ -219,13 +256,13 @@ public class  MainActivity extends TopBaseActivity {
                     finish();
 
 
-                    wanderOnNow();
-                    systemManager.showEmotion(EmotionsType. WHISTLE);
+
 
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "you are in front of me", Toast.LENGTH_SHORT).show();
-                    Log.i(TAG, "PIR frontal triggered");
+                    wanderOnNow();
+                    systemManager.showEmotion(EmotionsType. WHISTLE);
+
 
                 }
             }

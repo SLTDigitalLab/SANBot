@@ -40,10 +40,47 @@ import java.util.List;
 public class BaseActivity extends TopBaseActivity  {
     private final static String TAG = "DIL-BAS";
 
-    @BindView(R.id.button)
-    Button button;
-    @BindView(R.id.buttonf)
-    Button buttonf;
+    @BindView(R.id.buttonarro)
+    Button buttonarro;
+    @BindView(R.id.buttonsurp)
+    Button buttonsurp;
+    @BindView(R.id.buttonwhis)
+    Button buttonwhis;
+    @BindView(R.id.buttonlau)
+    Button buttonlau;
+    @BindView(R.id.buttongb)
+    Button buttongb;
+    @BindView(R.id.buttonshy)
+    Button buttonshy;
+    @BindView(R.id.buttonsweat)
+    Button buttonsweat;
+    @BindView(R.id.buttonsnicker)
+    Button buttonsnicker;
+    @BindView(R.id.buttonpick)
+    Button buttonpick;
+    @BindView(R.id.buttoncry)
+    Button buttoncry;
+    @BindView(R.id.buttonab)
+    Button buttonab;
+    @BindView(R.id.buttonang)
+    Button buttonang;
+    @BindView(R.id.buttonki)
+    Button buttonki;
+    @BindView(R.id.buttonsleep)
+    Button buttonsleep;
+    @BindView(R.id.buttonsmile)
+    Button buttonsmile;
+    @BindView(R.id.buttongri)
+    Button buttongri;
+    @BindView(R.id.buttonques)
+    Button buttonques;
+    @BindView(R.id.buttonfaint)
+    Button buttonfaint;
+    @BindView(R.id.buttonprise)
+    Button buttonprise;
+    @BindView(R.id.buttonnormal)
+    Button buttonnormal;
+
     //robot managers
 
     private HDCameraManager hdCameraManager; //video, faceRec
@@ -96,19 +133,17 @@ public class BaseActivity extends TopBaseActivity  {
 
         //initialize speak
         MySettings.initializeSpeak();
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonarro.setOnClickListener(new View.OnClickListener() {
             @Override
-            @OnClick(R.id.button)
+            @OnClick(R.id.buttonarro)
             public void onClick(View view) {
-                turnOnLights();
+
             }
         });
-        buttonf.setOnClickListener(new View.OnClickListener() {
+        buttonsurp.setOnClickListener(new View.OnClickListener() {
             @Override
-            @OnClick(R.id.buttonf)
+            @OnClick(R.id.buttonsurp)
             public void onClick(View view) {
-                moveForward();
-
 
             }
         });

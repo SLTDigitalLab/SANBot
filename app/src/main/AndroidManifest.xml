@@ -19,6 +19,9 @@
         android:theme="@style/ActivityTheme"
         tools:targetApi="26">
         <activity
+            android:name=".inquiries"
+            android:exported="false" />
+        <activity
             android:name=".videoActivity"
             android:exported="false" />
         <activity

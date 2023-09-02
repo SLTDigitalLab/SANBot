@@ -2,8 +2,10 @@ package com.example.san;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity2 extends TopBaseActivity {
     private final static String TAG = "DIL-BAS";
@@ -76,6 +79,15 @@ public class MainActivity2 extends TopBaseActivity {
 
         //initialize speak
         MySettings.initializeSpeak();
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                @OnClick(R.id.button2)
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity2.this, BaseActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
         }catch(Exception e){
             Toast.makeText(getApplicationContext(), e.getMessage(),Toast.LENGTH_LONG).show();
         }

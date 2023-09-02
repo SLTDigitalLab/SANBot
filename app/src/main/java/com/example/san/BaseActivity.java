@@ -147,6 +147,150 @@ public class BaseActivity extends TopBaseActivity  {
 
             }
         });
+        buttonwhis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonwhis)
+            public void onClick(View view) {
+                // Implement the click action for the buttonwhis here
+            }
+        });
+
+        buttonlau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonlau)
+            public void onClick(View view) {
+                // Implement the click action for the buttonlau here
+            }
+        });
+
+        buttongb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttongb)
+            public void onClick(View view) {
+                // Implement the click action for the buttongb here
+            }
+        });
+
+        buttonshy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonshy)
+            public void onClick(View view) {
+                // Implement the click action for the buttonshy here
+            }
+        });
+
+        buttonsweat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonsweat)
+            public void onClick(View view) {
+                // Implement the click action for the buttonsweat here
+            }
+        });
+
+        buttonsnicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonsnicker)
+            public void onClick(View view) {
+                // Implement the click action for the buttonsnicker here
+            }
+        });
+
+        buttonpick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonpick)
+            public void onClick(View view) {
+                // Implement the click action for the buttonpick here
+            }
+        });
+
+        buttoncry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttoncry)
+            public void onClick(View view) {
+                // Implement the click action for the buttoncry here
+            }
+        });
+
+        buttonab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonab)
+            public void onClick(View view) {
+                // Implement the click action for the buttonab here
+            }
+        });
+
+        buttonang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonang)
+            public void onClick(View view) {
+                // Implement the click action for the buttonang here
+            }
+        });
+
+        buttonki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonki)
+            public void onClick(View view) {
+                // Implement the click action for the buttonki here
+            }
+        });
+
+        buttonsleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonsleep)
+            public void onClick(View view) {
+                // Implement the click action for the buttonsleep here
+            }
+        });
+
+        buttonsmile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonsmile)
+            public void onClick(View view) {
+                // Implement the click action for the buttonsmile here
+            }
+        });
+
+        buttongri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttongri)
+            public void onClick(View view) {
+                // Implement the click action for the buttongri here
+            }
+        });
+
+        buttonques.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonques)
+            public void onClick(View view) {
+                // Implement the click action for the buttonques here
+            }
+        });
+
+        buttonfaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonfaint)
+            public void onClick(View view) {
+                // Implement the click action for the buttonfaint here
+            }
+        });
+
+        buttonprise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonprise)
+            public void onClick(View view) {
+                // Implement the click action for the buttonprise here
+            }
+        });
+
+        buttonnormal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            @OnClick(R.id.buttonnormal)
+            public void onClick(View view) {
+                // Implement the click action for the buttonnormal here
+            }
+        });
+
 
 
 

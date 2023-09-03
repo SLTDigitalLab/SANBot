@@ -74,6 +74,7 @@ public class  MainActivity extends TopBaseActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            ButterKnife.bind(this);
             speechManager = (SpeechManager) getUnitManager(FuncConstant.SPEECH_MANAGER);
             systemManager = (SystemManager) getUnitManager(FuncConstant.SYSTEM_MANAGER);
             modularMotionManager = (ModularMotionManager) getUnitManager(FuncConstant.MODULARMOTION_MANAGER);

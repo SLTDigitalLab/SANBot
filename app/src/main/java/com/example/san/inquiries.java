@@ -17,6 +17,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class inquiries extends AppCompatActivity {
@@ -44,6 +45,7 @@ public class inquiries extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquiries);
+        ButterKnife.bind(this);
 
 
         buttonSub.setOnClickListener(new View.OnClickListener() {

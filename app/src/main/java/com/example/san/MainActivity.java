@@ -43,6 +43,7 @@ import com.sanbot.opensdk.function.unit.interfaces.hardware.PIRListener;
 import java.util.Calendar;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class  MainActivity extends TopBaseActivity {
@@ -109,6 +110,10 @@ public class  MainActivity extends TopBaseActivity {
 
             //initialize speak
             MySettings.initializeSpeak();
+
+
+
+
             exitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 @OnClick(R.id.exitButton)

@@ -70,6 +70,7 @@ public class ChoiceActivity extends TopBaseActivity {
 
         //initialize speak
         MySettings.initializeSpeak();
+
             button2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 @OnClick(R.id.button2)
